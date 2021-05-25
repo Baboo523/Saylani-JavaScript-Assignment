@@ -271,6 +271,8 @@ document.write("Hello! Dear "+name+" Most welcome to my Home");
 
 //Question-04:
 var s = prompt("Enter any number for multiplication table:");
+if(s.length>0)
+{
 console.log("## The Table of "+s+" ######");
 var a = 1;
 console.log(a+" x "+s+" = "+(a*s));
@@ -292,6 +294,9 @@ var j = ++i;
 console.log(j+" x "+s+" = "+(j*s));
 var k = ++j;
 console.log(k+" x "+s+" = "+(k*s));
+}
+if(s.length==0)
+{
 var s = 5;
 console.log("## The Table of "+s+" ########");
 var a = 1;
@@ -314,15 +319,20 @@ var j = ++i;
 console.log(j+" x "+s+" = "+(j*s));
 var k = ++j;
 console.log();(k+" x "+s+" = "+(k*s));
-
+}
 //Question-05:
-var s1 = prompt("Enter subject 1:");
-var s2 = prompt("Enter subject 2:");
-var s3 = prompt("Enter subject 3:");
-var totallMarks = 100;
-var submark1 = promt("Enter subject 1 obtained marks:") 
-var submark2 = promt("Enter subject 2 obtained marks:") 
-var submark3 = promt("Enter subject 3 obtained marks:") 
+var eachSubjectMarks =100;
+var totalSubjectsMarks, totalUserObtMarks, percentage;
+var subject1 =prompt("Enter Subject One");
+var subject2 =prompt("Enter Subject Two");
+var subject3 =prompt("Enter Subject Three");
+var marksObtSubjectOne = +prompt("Marks ontained from Suject One:");
+var marksObtSubjectTwo = +prompt("Marks ontained from Suject Two:");
+var marksObtSubjectThree = +prompt("Marks ontained from Suject Three:");
+totalUserObtMarks = marksObtSubjectOne + marksObtSubjectTwo + marksObtSubjectThree;
+totalSubjectsMarks =eachSubjectMarks * 3;
+percentage = totalUserObtMarks/totalSubjectsMarks * 100;
+document.write("<table cellpadding='5'><tr><th>Subjects</th><th>Total Marks</th><th>Obtained Marks</th><th>Percentage</th></tr><tr><td>"+ subject1 +"</td><td>"+ eachSubjectMarks +"</td><td>"+ marksObtSubjectOne +"</td><td>"+ marksObtSubjectOne +'%'+"</td></tr><tr><td>"+ subject2 +"</td><td>"+ eachSubjectMarks +"</td><td>"+ marksObtSubjectTwo +"</td><td>"+ marksObtSubjectTwo +'%'+"</td></tr><tr><td>"+ subject3 +"</td><td>"+ eachSubjectMarks +"</td><td>"+ marksObtSubjectThree +"</td><td>"+ marksObtSubjectThree +'%'+"</td></tr><tr><td> </td><td><strong>"+totalSubjectsMarks+"</strong></td><td><strong>"+totalUserObtMarks+"</strong></td><td><strong>"+percentage+'%'+"</strong></td></tr></table>");
 
 
 
@@ -347,15 +357,15 @@ if(city==="Karachi")
 var color = prompt("Enter traffic signal color:");
 if(color==="red")
 {
-    console.log("Must Stop");
+    document.write("<table style='border:#3977b5; width: 70%;'><tr><td style='color: #3977b5;'>Signal Color</td><td style='color: #3977b5;'>Message</td></tr><tr><th style='color: #3977b5;'>Red</th><td style='color:#4475b6'>Must Stop</td></tr></table>")
 }
 if(color==="green")
 {
-    console.log("Move now");
+    document.write("<table style='border:#3977b5; width: 70%;'><tr><td style='color: #3977b5;'>Signal Color</td><td style='color: #3977b5;'>Message</td></tr><tr><th style='color: #3977b5;'>Green</th><td style='color:#4475b6'>Move Now</td></tr></table>")
 }
 if(color=="yellow")
 {
-    console.log("Ready to move");
+    document.write("<table style='border:#3977b5; width: 70%;'><tr><td style='color: #3977b5;'>Signal Color</td><td style='color: #3977b5;'>Message</td></tr><tr><th style='color: #3977b5;'>Yellow</th><td style='color:#4475b6'>Ready to Move</td></tr></table>")
 }
 //Question-04:
 var fuel = prompt("Enter remaining fuel in car:");
@@ -416,7 +426,45 @@ if("car" < "cat")
     alert("car is smaller than cat");
 }
 //Question-06:
- table
+// Task 6
+var s1 = +prompt("Enter subject 1 marks:");
+var s2 = +prompt("Enter subject 2 marks:");
+var s3 = +prompt("Enter subject 3 marks:");
+var totalMarks = 300;
+var obtainMarks = s1+s2+s3;
+var Percentage = obtainMarks*100/totalMarks;
+if(Percentage>=80)
+{   document.write("<h1>Marksheet</h1>")
+    document.write("Totall Marks:"+totalMarks)
+    document.write("<br />"+"Marks Obtained:"+obtainMarks)
+    document.write("<br />"+"Percentage:"+Percentage+"%")
+    document.write("<br />"+"Grade: A-one")
+    document.write("<br />"+"Remarks: Excellent")
+}
+else if(Percentage>=70)
+{   document.write("<h1>Marksheet</h1>")
+    document.write("Totall Marks:"+totalMarks)
+    document.write("<br />"+"Marks Obtained:"+obtainMarks)
+    document.write("<br />"+"Percentage:"+Percentage+"%")
+    document.write("<br />"+"Grade: A")
+    document.write("<br />"+"Remarks: Good")
+}
+else if(Percentage>=60)
+{   document.write("<h1>Marksheet</h1>")
+    document.write("Totall Marks:"+totalMarks)
+    document.write("<br />"+"Marks Obtained:"+obtainMarks)
+    document.write("<br />"+"Percentage:"+Percentage+"%")
+    document.write("<br />"+"Grade: B")
+    document.write("<br />"+"Remarks: You need to improve")
+}
+else if(Percentage<=60 && Percentage>=0)
+{   document.write("<h1>Marksheet</h1>")
+    document.write("Totall Marks:"+totalMarks)
+    document.write("<br />"+"Marks Obtained:"+obtainMarks)
+    document.write("<br />"+"Percentage:"+Percentage+"%")
+    document.write("<br />"+"Grade: Fail")
+    document.write("<br />"+"Remarks: Sorry")
+}
 //Question-07:
     var secret_number = 1;
     var guess_number = prompt("Enter any number from (1 to 10)");
@@ -559,18 +607,19 @@ else
     console.log("It is consonant");
 }
 //Question-05:
-var password = "1234";
-if()
+var password = 1234;
+var match = +prompt("Enter password:")
+if(match.length==0)
 {
-    console.log("Please enter your password");
+    document.write("Please enter your password");
 }
-if(password==="1234")
+else if(match==password)
 {
-    console.log("Correct! The password you entered matches the original password");
+    document.write("Correct! The password you entered matches the original password");
 }
-else
+else if(match!==password)
 {
-    console.log("Incorrect password");
+    document.write("Incorrect password");
 }
 //Question-06:
 var hour = 13;
@@ -750,28 +799,42 @@ score.sort();
 console.log("Ordered scores of students: "+score);
 //Question-11:
 var city = ["Karachi","Lahore","Islamabad","Quetta","Peshawar"];
-console.log("Cities list:");
-console.log(city[0],city[1],city[2],city[3],city[4],);
-console.log("Selected Cities list:");
+document.write("Cities list:");
+for(var i = 0;i<city.length;i++)
+{
+    document.write(city[i])
+}
+document.write("Selected Cities list:");
 var a = city.slice(2,3);
-console.log(a[0]);
-console.log(a[1]);
+
+// console.log(a[0]);
+// console.log(a[1]);
 //Question-12:
-
-//Question-13:
-
-//Question 14:
 var arr = ["This ", " is ", " my ", " cat"];
-document.write("Array:"+)
+document.write("Array"+"<br />")
+for(var i = 0;i<arr.length;i++)
+{
+    document.write(arr[i]+",")
+}
 var main = arr.join('')
-document.write("String:"+"<br />"+main)
-
+document.write("<br />"+"String:"+"<br />"+main)
+//Question-13:
+var arr = ["Keyboard","Mouse","printer","Monitor"]
+for(var i = 0;i<arr.length;i++)
+{
+    document.write("<br />"+"out: " +"<br />"+ arr[i]); 
+}
+//Question 14:
+var arr = ["Keyboard","Mouse","printer","Monitor"].reverse();
+for(var i = 0;i<arr.length;i++)
+{
+    document.write("<br />"+"out: " +"<br />"+ arr[i]); 
+}
 //Question 15: 
 var arr = ["Apple","Samsung","Nokia","Matorala","Sony","Haier"]
 document.write("<select>")
 for(var i =0;i<arr.length;i++)
 {
-  
     document.write("<option>"+arr[i]+"</option>")
 }
 document.write("</select>")
